@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-desktop-branch-companion",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": true,
   "description": "Experimental conversation branch tree for the ChatGPT/Codex Windows desktop app",
   "license": "MIT",
