@@ -1,0 +1,13 @@
+{
+  "name": "chatgpt-desktop-branch-companion",
+  "version": "0.3.2",
+  "private": true,
+  "description": "Experimental conversation branch tree for the ChatGPT/Codex Windows desktop app",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --check companion.js && node --check inject.cjs && node --check cdp.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

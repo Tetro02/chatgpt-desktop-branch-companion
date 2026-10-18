@@ -1,0 +1,10 @@
+branch-state*.json
+*.tmp
+*.log
+*-pid.txt
+node_modules/
+autostart/
+backups/
+injection-probe/
+screenshots/
+test-results/
