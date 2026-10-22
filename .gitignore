@@ -3,6 +3,11 @@ branch-state*.json*
 bookmark-state*.json*
 manual-client-pid.txt
 backups/
+autostart/
+injection-probe/
+screenshots/
+test-results/
+*-pid.txt
 *.lnk
 *.log
 *.tmp
