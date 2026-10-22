@@ -6,6 +6,7 @@
 - Keep branches and bookmarks in the same runtime and provide a documented extension path.
 - Preserve existing records, local links, and legacy launcher compatibility.
 - Merge the published repository history while retaining its MIT license, security notes, and historical examples.
+- Remove duplicate legacy launchers, consolidate documentation under docs, and provide a minimal Windows release package with a feature overview.
 
 ## 0.4.6 - 2026-10-22
 

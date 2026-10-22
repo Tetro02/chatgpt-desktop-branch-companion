@@ -11,5 +11,5 @@ if ($ready) {
     & node (Join-Path $taskRoot 'inject.cjs')
     if ($LASTEXITCODE -ne 0) { throw 'GPT Assistant could not connect. See the preceding message.' }
 } else {
-    & (Join-Path $taskRoot 'launch-branch-companion.ps1')
+    & (Join-Path $taskRoot 'start-client.ps1')
 }
