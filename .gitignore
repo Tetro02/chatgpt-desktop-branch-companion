@@ -1,0 +1,15 @@
+# Local chat excerpts, identifiers, and recovery copies
+branch-state*.json*
+bookmark-state*.json*
+manual-client-pid.txt
+backups/
+*.lnk
+*.log
+*.tmp
+
+# Dependencies and editor/OS files
+node_modules/
+.env
+.env.*
+.DS_Store
+Thumbs.db

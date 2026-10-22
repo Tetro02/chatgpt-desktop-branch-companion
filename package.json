@@ -1,0 +1,15 @@
+{
+  "name": "branch-companion",
+  "version": "0.4.6",
+  "private": true,
+  "description": "Local ChatGPT desktop branch and message bookmark companion",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node inject.cjs",
+    "connect": "node handoff.cjs && node inject.cjs",
+    "check": "node --check companion.js && node --check bookmarks.js && node --check inject.cjs && node --check bookmark-store.cjs && node --check cdp.cjs && node --check handoff.cjs",
+    "test": "node --test --test-isolation=none tests/bookmark-store.test.cjs"
+  }
+}
