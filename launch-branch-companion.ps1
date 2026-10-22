@@ -4,7 +4,7 @@ $port = 19347
 
 $listener = Get-NetTCPConnection -State Listen -LocalPort $port -ErrorAction SilentlyContinue | Select-Object -First 1
 if ($listener) {
-    if ($listener.LocalAddress -ne '127.0.0.1') { throw '分支助手端口没有限定在本机，请先关闭占用该端口的程序。' }
+    if ($listener.LocalAddress -ne '127.0.0.1') { throw 'GPT助手端口没有限定在本机，请先关闭占用该端口的程序。' }
     $owner = Get-CimInstance Win32_Process -Filter ('ProcessId = ' + $listener.OwningProcess)
     if ($owner.Name -ne 'ChatGPT.exe' -or $owner.CommandLine -notmatch '--remote-debugging-port=19347') {
         throw '端口 19347 已被其他程序占用，请先关闭占用程序。'
@@ -12,7 +12,7 @@ if ($listener) {
 } else {
     $running = Get-Process -Name ChatGPT -ErrorAction SilentlyContinue
     if ($running) {
-        throw 'GPT/Codex 已经运行。请先完全退出 Beta 和正常版（包括后台进程），再重新双击“打开分支助手.cmd”。'
+        throw 'GPT/Codex 已经运行。请先完全退出 Beta 和正常版（包括后台进程），再重新双击“打开GPT助手.cmd”。'
     }
 
     $package = Get-AppxPackage -Name OpenAI.Codex | Select-Object -First 1
@@ -39,7 +39,7 @@ if (-not $pageReady) { throw '正常版 ChatGPT 尚未准备好。请关闭它�
 Push-Location $companionRoot
 try {
     & node (Join-Path $companionRoot 'inject.cjs') --port=19347 --state-file=branch-state.json
-    if ($LASTEXITCODE -ne 0) { throw '分支助手连接失败，请查看上面的错误提示。' }
+    if ($LASTEXITCODE -ne 0) { throw 'GPT助手连接失败，请查看上面的错误提示。' }
 } finally {
     Pop-Location
 }
